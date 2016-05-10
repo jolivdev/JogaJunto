@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Joga Junto</title>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,800' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/estilo.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <link rel="stylesheet" href="js/jquery-ui/jquery-ui.css">
+        <script src="js/jquery-2.2.3.js"></script>
+        <script src="js/jquery-ui/jquery-ui.js"></script>
+        <script>
+          $(function() {
+            var esportes = [
+              "ActionScript",
+              "AppleScript",
+              "Asp",
+              "BASIC",
+              "C",
+              "C++",
+              "Clojure",
+              "COBOL",
+              "ColdFusion",
+              "Erlang",
+              "Fortran",
+              "Groovy",
+              "Haskell",
+              "Java",
+              "JavaScript",
+              "Lisp",
+              "Perl",
+              "PHP",
+              "Python",
+              "Ruby",
+              "Scala",
+              "Scheme",
+              "Douglas"
+            ];
+            $("#esportes").autocomplete({
+                source: function(request, response) {
+                    var results = $.ui.autocomplete.filter(esportes, request.term);
+
+                    response(results.slice(0, 10));
+                }
+            });
+          });
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="menu-principal">
+                    <a><img src="img/ci/menu.png"/></a>
+                </div>
+                <div class="col-md-8 col-sm-7 col-xs-4">
+                    Logo
+                </div>
+                <div class="col-md-2 col-sm-3 col-xs-5">
+                    <div class="pull-right">
+                        <img class="img-circle img-profile" src="img/perfil.png" alt="Sua foto de perfil" title="Seu perfil"/>
+                        <a><img src="img/ci/arrow.png"/></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="dash">
+            <div class="container">
+                <div class="col-md-6 col-md-push-3">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="j-form" placeholder="Eu quero" name="busca-evento">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="j-form" placeholder="Esporte" name="esportes" id="esportes">
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="j-form">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        
+    </body>
+</html>

@@ -1,0 +1,178 @@
+html.welcome{
+    background: url(../img/bg1.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+}
+html, body {
+    min-height: 100% !important;
+}
+
+body{
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Montserrat", sans-serif;
+}
+
+body.home{
+    background: rgba(0,0,0,.7);
+}
+
+section.welcome{
+    color: #fff;
+    font-size: 30px;    
+}
+
+section.welcome h1{
+    font-size: 60px;
+}
+
+@media (min-width: 768px) {
+    section.welcome h1{
+        font-size: 80px;
+    }
+}
+
+header{
+    background-color: #fff;
+    font-size: 18px; 
+    line-height: 50px;
+    border-bottom: 1px solid #70B33F;
+    max-height: 80px;
+}
+.menu-principal{
+    .col-md-2();
+    .col-sm-2();
+    .col-xs-3();
+}
+
+.container{
+    vertical-align: middle;
+    height: 100% !important;
+}
+
+
+header .container{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.img-profile{
+    max-width:50px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.sign-up{
+    background: rgba(0,0,0,.5);
+    color: #fff;
+}
+
+.j-form{
+    width: 100%;
+    font-size: 16px;
+}
+
+input[type="email"].j-form, 
+input[type="text"].j-form, 
+input[type="password"].j-form{
+    font-weight: 600;
+    padding: 8px 12px;
+    line-height: 1.467;
+    box-shadow: none;
+    margin-top: 5px;
+    border: 2px solid #70B33F;
+    color: #000;
+    background: #fff;
+}
+
+button.j-form{
+    font-weight: 600;
+    padding: 8px 12px;
+    line-height: 1.467;
+    box-shadow: none;
+    margin-top: 5px;
+    border: 2px solid #fff;
+    color: #fff;
+    background: #70B33F;
+}
+
+button.j-form:hover{
+    font-weight: 600;
+    padding: 8px 12px;
+    line-height: 1.467;
+    box-shadow: none;
+    margin-top: 5px;
+    border: 2px solid #70B33F;
+    color: #70B33F;
+    background: #fff;
+}
+
+.j-form-error{
+    border: 2px solid #ef4b25 !important;
+}
+
+.facebook{
+    background: #3B5998 !important;
+}
+
+.facebook:hover{
+    border-color: #3B5998 !important;
+    color: #3B5998 !important;
+    background: #fff !important;
+}
+
+p.separator{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    
+    text-align: center;
+    font-weight: 400;
+}
+
+::-webkit-input-placeholder {
+    color: #666;
+    font-weight: 600;
+}
+
+:-moz-placeholder {
+    color: #666;
+    font-weight: 600;
+}
+
+::-moz-placeholder {
+    color: #666;
+    font-weight: 600;
+}
+
+:-ms-input-placeholder {  
+    color: #666;
+    font-weight: 600;
+}
+
+.popover-content{
+    color: #ef4b25 !important;
+}
+
+.ui-menu{
+    background: #fff;
+    border: 3px solid #70B33F;
+    border-top: none;
+}
+
+.ui-menu div{
+    font-size: 14px;
+}
+
+.ui-menu div:hover{
+    font-size: 14px;
+}

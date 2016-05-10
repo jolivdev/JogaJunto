@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="welcome">
+    <head>
+        <meta charset="utf-8">
+        <title>Joga Junto</title>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,800' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/estilo.css">
+        <script src="js/jquery-2.2.3.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/functions.js"></script>
+    </head>
+    <body class="home">
+        <header>
+            <div class="container">
+                <div class="col-md-2 col-sm-2 col-xs-3">
+                    <a><img src="img/ci/menu.png"/></a>
+                   
+                </div>
+                <div class="col-md-8 col-sm-7 col-xs-4">
+                    Logo
+                </div>
+            </div>
+        </header>
+        <section class="welcome">
+            <div class="container">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <h1>Venha jogar junto!</h1>
+                    <p>O Joga Junto é uma rede social que une as pessoas através do esporte</p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="row">   
+                        <div class="col-sm-6">
+                            <button id="cadastrar" class="j-form">Cadastrar</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button id="entrar" class="j-form">Entrar</button>
+                        </div>
+                    </div>
+                    <form id="cadastrar" class="hidden">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input class="j-form" id="nome" type="text" name="nome" placeholder="Nome">
+                            </div>
+                            <div class="col-md-6">
+                                <input class="j-form" id="sobrenome" type="text" name="sobrenome" placeholder="Sobrenome">
+                            </div>
+                        </div>
+                        <input class="j-form" id="email" type="email" name="email" placeholder="E-mail">
+                        <input class="j-form" id="senha" type="password" name="senha" placeholder="Senha">
+                        <button class="j-form" id="cadastrar" type="submit">Cadastrar</button>
+                    </form>
+                    <form id="entrar" class="hidden">
+                        <input class="j-form" id="email" type="email" name="email" placeholder="E-mail ou usuário">
+                        <input class="j-form" id="senha" type="password" name="senha" placeholder="Senha">
+                        <button class="j-form" id="cadastrar" type="submit">Entrar</button>
+                    </form>
+                    <p class="separator">ou</p>
+                    <button id="facebook" class="facebook j-form">Entrar com o Facebook</button>
+                </div>
+            </div>
+        </section>
+        
+    </body>
+    <script>
+        $('button#entrar').click(function(){
+            if ($('form#entrar').hasClass('hidden')){
+                $('form#entrar').removeClass('hidden');
+                if (!($('form#cadastrar').hasClass('hidden'))){
+                    $('form#cadastrar').addClass('hidden');
+                }
+            }
+        });
+        
+        $('button#cadastrar').click(function(){
+            if ($('form#cadastrar').hasClass('hidden')){
+                $('form#cadastrar').removeClass('hidden');
+                if (!($('form#entrar').hasClass('hidden'))){
+                    $('form#entrar').addClass('hidden');
+                }
+            }
+        });
+        
+        $('#nome').focusout(function() {
+            if ($(this).val().length <= 2){
+                formError(this);
+                //tooltipError(this, 'top', 'Nome muito curto');
+            } else {
+                tooltipNoError(this);
+            }
+        });
+        $('#nome').keyup(function(){
+            if ($(this).val().length >= 3){
+                tooltipNoError(this);
+            }
+        });
+
+
+        $('#sobrenome').focusout(function() {
+            if ($(this).val().length <= 2){
+                formError(this);
+                //tooltipError(this, 'top', 'Sobrenome muito curto');
+            } else {
+                tooltipNoError(this);
+            }
+        });
+        $('#sobrenome').keyup(function(){
+            if ($(this).val().length >= 3){
+                tooltipNoError(this);
+            }
+        });
+
+        $('#email').focusout(function() {
+            var retorno = validaEmail($(this).val());
+            if (retorno == ''){
+                tooltipNoError(this);
+            } else {
+                formError(this);
+                //tooltipError(this, 'top', retorno);
+            }
+        });
+        $('#email').keyup(function(){
+            var retorno = validaEmail($(this).val());
+            if (retorno == ''){
+                tooltipNoError(this);
+            }
+        });
+
+        
+    </script>
+</html>
