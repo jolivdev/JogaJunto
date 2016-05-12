@@ -44,10 +44,9 @@ header{
     border-bottom: 1px solid #70B33F;
     max-height: 80px;
 }
-.menu-principal{
-    .col-md-2();
-    .col-sm-2();
-    .col-xs-3();
+
+header.home{
+    background-color: transparent;
 }
 
 .container{
