@@ -79,7 +79,8 @@ header .container{
 
 input[type="email"].j-form, 
 input[type="text"].j-form, 
-input[type="password"].j-form{
+input[type="password"].j-form,
+textarea.j-form{
     font-weight: 600;
     padding: 8px 12px;
     line-height: 1.467;
@@ -96,9 +97,9 @@ button.j-form{
     line-height: 1.467;
     box-shadow: none;
     margin-top: 5px;
-    border: 2px solid #fff;
-    color: #fff;
-    background: #70B33F;
+    border: 2px solid #70B33F;
+    color: #70B33F;
+    background: #fff;
 }
 
 button.j-form:hover{
@@ -108,8 +109,43 @@ button.j-form:hover{
     box-shadow: none;
     margin-top: 5px;
     border: 2px solid #70B33F;
+    color: #fff;
+    background: #70B33F;
+}
+
+button.j-form-xs{
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 5px 5px;
+    line-height: 1.467;
+    box-shadow: none;
+    margin-top: 5px;
+    border: 2px solid #70B33F;
     color: #70B33F;
     background: #fff;
+}
+
+button.j-form-xs:hover{
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 5px 5px;
+    line-height: 1.467;
+    box-shadow: none;
+    margin-top: 5px;
+    border: 2px solid #70B33F;
+    color: #fff;
+    background: #70B33F;
+}
+
+.side-new h4{
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
+
+span.want{
+    font-size: 20px;
+    text-transform: uppercase;
+    line-height: 2.3;
 }
 
 .j-form-error{
@@ -118,6 +154,8 @@ button.j-form:hover{
 
 .facebook{
     background: #3B5998 !important;
+    color: #fff !important;
+    border-color: #fff !important;
 }
 
 .facebook:hover{
@@ -133,7 +171,6 @@ p.separator{
     margin-top: 20px;
     margin-bottom: 15px;
     font-size: 16px;
-    
     text-align: center;
     font-weight: 400;
 }
@@ -174,4 +211,74 @@ p.separator{
 
 .ui-menu div:hover{
     font-size: 14px;
+}
+
+.margin-top{
+    margin-top: 20px;
+}
+
+.date{
+    background-color:coral;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    min-height: 125px;
+}
+
+.date span{
+    display: block;
+}
+
+span.number{
+    font-size: 56px;
+}
+
+span.month{
+    font-size: 16px;
+}
+
+.evento{
+    margin-top: 5px;
+}
+
+.evento p {
+    line-height: 1;
+}
+
+.evento span{
+}
+
+.mapa{
+    background-image: url('../img/maps.png');
+    min-height: 125px;
+}
+
+.menu-top {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.prox-principal-data{
+    background: #ef4b25;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    color: #fff;
+}
+
+span.number-prox-evento{
+    font-size: 56px;
+}
+
+span.month-prox-evento{
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0px;
+    padding: 0px;
+}
+
+.date-prox-evento{
+    padding: 0px !important;
 }
