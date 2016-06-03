@@ -80,6 +80,8 @@ header .container{
 input[type="email"].j-form, 
 input[type="text"].j-form, 
 input[type="password"].j-form,
+input[type="date"].j-form,
+input[type="time"].j-form,
 textarea.j-form{
     font-weight: 600;
     padding: 8px 12px;
@@ -145,6 +147,11 @@ button.j-form-xs:hover{
 span.want{
     font-size: 20px;
     text-transform: uppercase;
+    line-height: 2.3;
+}
+
+span.form{
+    font-size: 20px;
     line-height: 2.3;
 }
 
@@ -218,8 +225,8 @@ p.separator{
 }
 
 .date{
-    background-color:coral;
-    color: #fff;
+    background-color: #fff;
+    color: coral;
     font-family: "Montserrat", sans-serif;
     text-align: center;
     min-height: 125px;
@@ -262,23 +269,76 @@ span.month{
 }
 
 .prox-principal-data{
-    background: #ef4b25;
     font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    color: #fff;
+    font-size: 25px;
+    color: coral;
 }
 
-span.number-prox-evento{
-    font-size: 56px;
-}
-
-span.month-prox-evento{
-    font-size: 14px;
-    font-weight: 400;
-    margin: 0px;
-    padding: 0px;
+.nome-prox-evento{
+    margin-top: 10px;
 }
 
 .date-prox-evento{
     padding: 0px !important;
 }
+
+.forum.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.forum .glyphicon {
+    width: 1em;
+    text-align: center;
+}
+
+.forum.table th.cell-stat {
+    width: 6em;
+}
+
+.forum.table th.cell-stat-2x {
+    width: 14em;
+}
+
+.forum .forum-post-panel {
+    margin-bottom: 1em;
+}
+
+.forum.media-list li img.avatar {
+    display: block;
+    margin: 0 auto;
+}
+
+.forum.media-list li .user-info {
+    text-align: center;
+    width: 8em;
+}
+
+@media (max-width: 760px) {
+    .forum.media-list li .user-info {
+        float: none;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+}
+
+a, a:hover, a:active, a:visited{
+    color: #70B33F;
+}
+
+.text-jj{
+    color: coral;
+}
+
+a.btn-j{
+    border: 2px solid #70B33F;
+    color: #70B33F;
+    border-radius: 0px !important;
+}
+
+a.btn-j:hover{
+    border: 2px solid #70B33F;
+    background-color: #70B33F;
+    color: #fff;
+    border-radius: 0px !important;
+}
+

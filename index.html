@@ -34,7 +34,7 @@
                             <button id="entrar" class="j-form">Entrar</button>
                         </div>
                     </div>
-                    <form id="cadastrar" class="hidden" method="post">
+                    <form id="cadastrar" class="hidden" method="post" action="dash.html">
                         <div class="row">
                             <div class="col-laptop-6">
                                 <input class="j-form" id="nome" type="text" name="nome" placeholder="Nome">
@@ -121,6 +121,10 @@
                 tooltipNoError(this);
             }
         });
+        
+        $("#facebook").click(function(){
+            window.location = 'dash.html';
+        })
 
         
     </script>

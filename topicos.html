@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Joga Junto</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,800' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/jquery-2.2.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/functions.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="col-laptop-8 col-tablet-7 col-phone-4">
+                Logo
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="page-header page-heading">
+            <h1 class="pull-left">Futebol</h1>
+            <div class="pull-right">
+                <button class="j-form" id="back"><i class="fa fa-backward"></i> Voltar ao fórum</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <p class="lead">O esporte mais popular do Brasil-sil-sil!</p>
+        <table class="table forum">
+            <thead>
+                <tr>
+                    <th class="cell-stat"></th>
+                    <th>
+                        <h3>Mais populares <i class="fa fa-fire text-jj"></i></h3>
+                    </th>
+                    <th class="cell-stat text-center hidden-phone hidden-tablet">Última resposta</th>
+                    <th class="cell-stat text-center hidden-phone hidden-tablet">Respostas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center"><i class="fa fa-question fa-2x text-jj"></i></td>
+                    <td>
+                        <h4><a href="topico.html">Qual é a melhor bola?</a><br><small>Janaína Barros: Oi galera, hoje tava procurando uma bola pra comprar ma...</small></h4>
+                    </td>
+                    <td class="text-center hidden-phone hidden-tablet">2 min atrás</td>
+                    <td class="text-center hidden-phone hidden-tablet">2</td>
+                </tr>
+                <tr>
+                    <td class="text-center"><i class="fa fa-map-marker fa-2x text-jj"></i></td>
+                    <td>
+                        <h4><a href="topico.html">Vocês já participaram de quantos jogos de futebol marcados por aqui?</a><br><small>Evertt Arima: Eu já participei de mais de 10! Essa plataforma é maravilhosa...</small></h4>
+                    </td>
+                    <td class="text-center hidden-phone hidden-tablet">10 min atrás</td>
+                    <td class="text-center hidden-phone hidden-tablet">5</td>
+                </tr>
+                <tr>
+                    <td class="text-center"><i class="fa fa-hand-peace-o fa-2x text-jj"></i></td>
+                    <td>
+                        <h4><a href="topico.html">Tópico de boas-vindas aos futeboleiros!</a><br><small>Douglas Santos: Boa tarde! Eu acabei de me cadastrar. Adoro fóruns e jog...</small></h4>
+                    </td>
+                    <td class="text-center hidden-phone hidden-tablet">1 hora atrás</td>
+                    <td class="text-center hidden-phone hidden-tablet">13</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    $("#back").click(function(){
+       document.location.href = 'forum.html'; 
+    });
+</script>
+</html>
