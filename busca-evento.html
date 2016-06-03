@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <meta charset="utf-8">
-        <title>Joga Junto</title>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,800' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/estilo.css">
-        <link rel="stylesheet" href="js/jquery-ui/jquery-ui.css">
-        <script src="js/jquery-2.2.3.js"></script>
-        <script src="js/jquery-ui/jquery-ui.js"></script>
-        <script>
-          $(function() {
+
+<head>
+    <meta charset="utf-8">
+    <title>Joga Junto</title>
+    <link href='css/fonts.css' rel='stylesheet' type='text/css'>
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="js/jquery-ui/jquery-ui.css">
+    <script src="js/jquery-2.2.3.js"></script>
+    <script src="js/jquery-ui/jquery-ui.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+        $(function () {
             var esportes = [
               "ActionScript",
               "AppleScript",
@@ -39,80 +40,97 @@
               "Douglas"
             ];
             $("#esportes").autocomplete({
-                source: function(request, response) {
+                source: function (request, response) {
                     var results = $.ui.autocomplete.filter(esportes, request.term);
 
                     response(results.slice(0, 10));
                 }
             });
-          });
-        </script>
-    </head>
-    <body>
-        <header>
-            <div class="container">
-                <div class="col-laptop-3 col-tablet-3 col-phone-6">
-                    <img src="img/logo-small.png" width="50px">
-                </div>
-                <div class="col-laptop-6 col-tablet-6 hidden-phone">
-                    <ul class="menu-top">
-                        <li><a href="busca-evento.html">Evento</a></li>
-                        <li><a href="lista-amigos.html">Amigos</a></li>
-                        <li><a href="forum.html">Fórum</a></li>
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="col-laptop-3 col-tablet-3 col-phone-6">
+                <a href="dash.html"><img src="img/logo-small.png" width="50px"></a>
+            </div>
+            <div class="col-laptop-6 col-tablet-6 hidden-phone">
+                <ul class="menu-top">
+                    <li><a href="busca-evento.html" data-toggle="tooltip" data-placement="bottom" title="Eventos"><i class="fa fa-calendar-o" title="Eventos" aria-hidden="true"></i>
+</a></li>
+                    <li><a href="lista-amigos.html" data-toggle="tooltip" data-placement="bottom" title="Amigos"><i class="fa fa-users" title="Amigos" aria-hidden="true"></i>
+</a></li>
+                    <li><a href="forum.html" data-toggle="tooltip" data-placement="bottom" title="Fórum"><i class="fa fa-pencil-square-o" title="Fórum" aria-hidden="true"></i>
+</a></li>
+                </ul>
+            </div>
+            <div class="col-laptop-3 col-tablet-3 col-phone-6">
+                <div class="pull-right">
+                    <img class="img-circle img-profile" src="img/perfil.png" alt="Sua foto de perfil" title="Seu perfil" />
+                    <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <img src="img/ci/arrow.png" />
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="meu-perfil.html">Meu perfil</a></li>
+                        <li><a href="#">Configurações</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="index.html">Sair</a></li>
                     </ul>
                 </div>
-                <div class="col-laptop-3 col-tablet-3 col-phone-6">
-                    <div class="pull-right">
-                        <img class="img-circle img-profile" src="img/perfil.png" alt="Sua foto de perfil" title="Seu perfil"/>
-                        <a><img src="img/ci/arrow.png"/></a>
-                    </div>
+            </div>
+        </div>
+    </header>
+    <section class="dash">
+        <div class="container">
+            <div class="row">
+                <div class="col-laptop-6 col-laptop-push-3">
+                    <form class="margin-top" method="post">
+                        <div class="row">
+                            <div class="col-laptop-6">
+                                <input type="text" class="j-form" placeholder="Quero" value="Futebol" name="esporte" id="esportes">
+                            </div>
+                            <div class="col-laptop-6">
+                                <input type="text" class="j-form" placeholder="em" value="Praia Grande" name="local">
+                            </div>
+                        </div>
+                        <button type="submit" class="j-form">Buscar</button>
+                    </form>
+                </div>
+                <div class="col-laptop-3 col-laptop-push-3 col-tablet-4 col-phone-12 side-new margin-top">
+                    <h4>Não encontrou o que você queria?</h4>
+                    <form action="criar-evento.html" method="post">
+                        <button type="submit" class="j-form">Crie seu evento!</button>
+                    </form>
                 </div>
             </div>
-        </header>
-        <section class="dash">
-            <div class="container">
-                <div class="row">
-                    <div class="col-laptop-6 col-laptop-push-3">
-                        <form class="margin-top" method="post">
-                            <div class="row">
-                                <div class="col-laptop-6">
-                                    <input type="text" class="j-form" placeholder="Quero" value="Futebol" name="esporte"  id="esportes">
-                                </div>
-                                <div class="col-laptop-6">
-                                    <input type="text" class="j-form" placeholder="em" value="Praia Grande" name="local">
-                                </div>
-                            </div>
-                            <button type="submit" class="j-form">Buscar</button>
-                        </form>
-                    </div>
-                    <div class="col-laptop-3 col-laptop-push-3 col-tablet-4 col-phone-12 side-new margin-top">
-                    <h4>Não encontrou o que você queria?</h4>
-                        <form action="criar-evento.html" method="post">
-                            <button type="submit" class="j-form">Crie seu evento!</button>
-                        </form>
-                </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-laptop-6 col-laptop-push-3 col-tablet-8 col-phone-12">
-                        <div class="evento">
-                            <div class="col-laptop-3 col-tablet-3 col-phone-3 date">
-                                <span class="number">9</span> <span class="month">jun/2016</span>
-                            </div>
-                            <div class="col-laptop-6 col-tablet-6 col-phone-6">
-                                <h4>Futebol na praça</h4>
-                                <p>R. José Cândido, nº55 Boqueirão, Praia Grande</p>
-                                <span>Domingo, 14h</span>
-                                <button class="j-form-xs pull-right">Jogar junto</button>
-                            </div>
-                            <div class="col-laptop-3 col-tablet-3 col-phone-3 mapa">
-                                <img src="img/maps.png" title="Mapa" class="img-responsive"/>
-                            </div>
+
+            <div class="row">
+                <div class="col-laptop-6 col-laptop-push-3 col-tablet-8 col-phone-12">
+                    <div class="evento">
+                        <div class="col-laptop-3 col-tablet-3 col-phone-3 date">
+                            <span class="number">9</span> <span class="month">jun/2016</span>
+                        </div>
+                        <div class="col-laptop-6 col-tablet-6 col-phone-6">
+                            <h4>Futebol na praça</h4>
+                            <p>R. José Cândido, nº55 Boqueirão, Praia Grande</p>
+                            <span>Domingo, 14h</span>
+                            <a class="j-form-xs pull-right" href="evento.html">Jogar junto</a>
+                        </div>
+                        <div class="col-laptop-3 col-tablet-3 col-phone-3 mapa">
+                            <span></span>
                         </div>
                     </div>
                 </div>
-                
             </div>
-        </section>        
-    </body>
+
+        </div>
+    </section>
+</body>
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
 </html>

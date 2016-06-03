@@ -4,16 +4,14 @@
 <head>
     <meta charset="utf-8">
     <title>Joga Junto</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='css/fonts.css' rel='stylesheet' type='text/css'>
+    <link href="css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="js/jquery-ui/jquery-ui.css">
     <script src="js/jquery-2.2.3.js"></script>
     <script src="js/jquery-ui/jquery-ui.js"></script>
-    <script src="js/jquery.mask.js"></script>
-    <script src="js/moment.js"></script>
-    <script src="js/bootstrap-datetimepicker.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script>
         $(function () {
             var esportes = [
@@ -35,30 +33,41 @@
 
 <body>
     <header>
-            <div class="container">
-                <div class="col-laptop-3 col-tablet-3 col-phone-6">
-                    <img src="img/logo-small.png" width="50px">
-                </div>
-                <div class="col-laptop-6 col-tablet-6 hidden-phone">
-                    <ul class="menu-top">
-                        <li><a href="busca-evento.html">Evento</a></li>
-                        <li><a href="lista-amigos.html">Amigos</a></li>
-                        <li><a href="forum.html">Fórum</a></li>
+        <div class="container">
+            <div class="col-laptop-3 col-tablet-3 col-phone-6">
+                <a href="dash.html"><img src="img/logo-small.png" width="50px"></a>
+            </div>
+            <div class="col-laptop-6 col-tablet-6 hidden-phone">
+                <ul class="menu-top">
+                    <li><a href="busca-evento.html" data-toggle="tooltip" data-placement="bottom" title="Eventos"><i class="fa fa-calendar-o" title="Eventos" aria-hidden="true"></i>
+</a></li>
+                    <li><a href="lista-amigos.html" data-toggle="tooltip" data-placement="bottom" title="Amigos"><i class="fa fa-users" title="Amigos" aria-hidden="true"></i>
+</a></li>
+                    <li><a href="forum.html" data-toggle="tooltip" data-placement="bottom" title="Fórum"><i class="fa fa-pencil-square-o" title="Fórum" aria-hidden="true"></i>
+</a></li>
+                </ul>
+            </div>
+            <div class="col-laptop-3 col-tablet-3 col-phone-6">
+                <div class="pull-right">
+                    <img class="img-circle img-profile" src="img/perfil.png" alt="Sua foto de perfil" title="Seu perfil" />
+                    <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <img src="img/ci/arrow.png" />
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="meu-perfil.html">Meu perfil</a></li>
+                        <li><a href="#">Configurações</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="index.html">Sair</a></li>
                     </ul>
                 </div>
-                <div class="col-laptop-3 col-tablet-3 col-phone-6">
-                    <div class="pull-right">
-                        <img class="img-circle img-profile" src="img/perfil.png" alt="Sua foto de perfil" title="Seu perfil"/>
-                        <a><img src="img/ci/arrow.png"/></a>
-                    </div>
-                </div>
             </div>
-        </header>
+        </div>
+    </header>
     <section class="dash">
         <div class="container">
             <div class="col-laptop-6 col-laptop-push-3">
                 <h1 class="text-center text-jj">CRIAR EVENTO</h1>
-                <form class="margin-top" method="post" action="busca-evento.html">
+                <form class="margin-top" method="post" action="meu-evento.html">
                     <div class="row">
                         <div class="col-laptop-3">
                             <span class="form">Título</span>
@@ -70,7 +79,10 @@
                             <span class="form">Local</span>
                         </div>
                         <div class="col-laptop-9">
-                            <input type="text" class="j-form" placeholder="local" name="local" value="Praia Grande, SP">
+                            <input type="text" class="j-form" placeholder="local" name="local" value="Praia do Boqueirão - Praia Grande, SP">
+                        </div>
+                        <div class="col-laptop-12">
+                            <img src="img/mapa.png" class="img-responsive mapa">
                         </div>
                         <div class="col-laptop-3">
                             <span class="form">Modalidade</span>
@@ -95,10 +107,10 @@
                             <span class="form">Descrição</span>
                         </div>
                         <div class="col-laptop-9">
-                            <textarea class="j-form" value="Venham todos de camisetada cor do time, galera!" name="descricao"></textarea>
+                            <textarea class="j-form" name="descricao">Venham todos de camiseta da cor do time, galera!</textarea>
                         </div>
                     </div>
-                    <button type="submit" class="j-form">Buscar</button>
+                    <button type="submit" class="j-form">Criar</button>
                 </form>
             </div>
 
@@ -106,11 +118,8 @@
     </section>
 </body>
 <script>
-    /*$(document).ready(function(){
-        $("#date").mask('00/00/0000');
-    });*/
-    $(function () {
-        $('#datetimepicker4').datetimepicker();
-    });
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 </script>
 </html>

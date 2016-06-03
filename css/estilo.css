@@ -83,7 +83,6 @@ input[type="password"].j-form,
 input[type="date"].j-form,
 input[type="time"].j-form,
 textarea.j-form{
-    font-weight: 600;
     padding: 8px 12px;
     line-height: 1.467;
     box-shadow: none;
@@ -93,7 +92,7 @@ textarea.j-form{
     background: #fff;
 }
 
-button.j-form{
+button.j-form, a.j-form{
     font-weight: 600;
     padding: 8px 12px;
     line-height: 1.467;
@@ -104,7 +103,7 @@ button.j-form{
     background: #fff;
 }
 
-button.j-form:hover{
+button.j-form:hover, a.j-form:hover{
     font-weight: 600;
     padding: 8px 12px;
     line-height: 1.467;
@@ -113,9 +112,10 @@ button.j-form:hover{
     border: 2px solid #70B33F;
     color: #fff;
     background: #70B33F;
+    text-decoration: none;
 }
 
-button.j-form-xs{
+.j-form-xs{
     font-weight: 600;
     text-transform: uppercase;
     padding: 5px 5px;
@@ -127,7 +127,7 @@ button.j-form-xs{
     background: #fff;
 }
 
-button.j-form-xs:hover{
+.j-form-xs:hover{
     font-weight: 600;
     text-transform: uppercase;
     padding: 5px 5px;
@@ -137,6 +137,7 @@ button.j-form-xs:hover{
     border: 2px solid #70B33F;
     color: #fff;
     background: #70B33F;
+    text-decoration: none;
 }
 
 .side-new h4{
@@ -184,22 +185,18 @@ p.separator{
 
 ::-webkit-input-placeholder {
     color: #666;
-    font-weight: 600;
 }
 
 :-moz-placeholder {
     color: #666;
-    font-weight: 600;
 }
 
 ::-moz-placeholder {
     color: #666;
-    font-weight: 600;
 }
 
 :-ms-input-placeholder {  
     color: #666;
-    font-weight: 600;
 }
 
 .popover-content{
@@ -342,3 +339,40 @@ a.btn-j:hover{
     border-radius: 0px !important;
 }
 
+form.principal{
+    color: coral;
+    font-size: 30px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+}
+
+.input-principal{
+    display: inline !important;
+}
+
+.input-principal input.j-form{
+    width: auto !important;
+}
+
+.principal button.j-form{
+    width: auto !important;
+    padding: 8px 30px;
+}
+
+a.dropdown-toggle{
+    cursor: pointer;
+}
+
+.profile p{
+    font-size: 20px;
+}
+
+.profile{
+    padding-bottom: 10px;
+    border-bottom: 1px coral solid;
+}
+
+img.mapa{
+    margin-top: 5px;
+    border: 2px solid coral;
+}
