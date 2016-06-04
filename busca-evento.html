@@ -12,36 +12,45 @@
     <script src="js/jquery-2.2.3.js"></script>
     <script src="js/jquery-ui/jquery-ui.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-notify.js"></script>
+    <script src="js/validator.js"></script>
     <script>
         $(function () {
             var esportes = [
-              "ActionScript",
-              "AppleScript",
-              "Asp",
-              "BASIC",
-              "C",
-              "C++",
-              "Clojure",
-              "COBOL",
-              "ColdFusion",
-              "Erlang",
-              "Fortran",
-              "Groovy",
-              "Haskell",
-              "Java",
-              "JavaScript",
-              "Lisp",
-              "Perl",
-              "PHP",
-              "Python",
-              "Ruby",
-              "Scala",
-              "Scheme",
-              "Douglas"
+              "Basquete",
+                "Boxe",
+                "Ciclismo",
+                "Futebol",
+                "Jiu Jitsu",
+                "Judô",
+                "Parkour",
+                "Surf",
+                "Tênis",
+                "Vôlei",
+                "Windsurf",
+                "Xadrez"
             ];
             $("#esportes").autocomplete({
                 source: function (request, response) {
                     var results = $.ui.autocomplete.filter(esportes, request.term);
+
+                    response(results.slice(0, 10));
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            var locais = [
+                "Praia Grande, SP",
+                "São Paulo, SP",
+                "Unicórnios, SP",
+                "Santos, SP",
+                "Rio de Janeiro, RJ"
+            ];
+            $("#place").autocomplete({
+                source: function (request, response) {
+                    var results = $.ui.autocomplete.filter(locais, request.term);
 
                     response(results.slice(0, 10));
                 }
@@ -84,21 +93,25 @@
     </header>
     <section class="dash">
         <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="dash.html">Início</a></li>
+                <li class="active">Eventos</li>
+            </ol>
             <div class="row">
                 <div class="col-laptop-6 col-laptop-push-3">
-                    <form class="margin-top" method="post">
+                    <form method="post">
                         <div class="row">
                             <div class="col-laptop-6">
                                 <input type="text" class="j-form" placeholder="Quero" value="Futebol" name="esporte" id="esportes">
                             </div>
                             <div class="col-laptop-6">
-                                <input type="text" class="j-form" placeholder="em" value="Praia Grande" name="local">
+                                <input type="text" class="j-form" placeholder="em" value="Praia Grande, SP" name="local" id="place">
                             </div>
                         </div>
                         <button type="submit" class="j-form">Buscar</button>
                     </form>
                 </div>
-                <div class="col-laptop-3 col-laptop-push-3 col-tablet-4 col-phone-12 side-new margin-top">
+                <div class="col-laptop-3 col-laptop-push-3 col-tablet-4 col-phone-12 side-new">
                     <h4>Não encontrou o que você queria?</h4>
                     <form action="criar-evento.html" method="post">
                         <button type="submit" class="j-form">Crie seu evento!</button>
@@ -116,7 +129,7 @@
                             <h4>Futebol na praça</h4>
                             <p>R. José Cândido, nº55 Boqueirão, Praia Grande</p>
                             <span>Domingo, 14h</span>
-                            <a class="j-form-xs pull-right" href="evento.html">Jogar junto</a>
+                            <button class="j-form-xs pull-right" id="participar">Jogar junto</button>
                         </div>
                         <div class="col-laptop-3 col-tablet-3 col-phone-3 mapa">
                             <span></span>
@@ -129,8 +142,16 @@
     </section>
 </body>
 <script>
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+    $("#participar").click(function () {
+        $.notify({
+            message: 'Você agora está participando do evento!    '
+        }, {
+            type: 'success'
+        });
+    })
 </script>
+
 </html>

@@ -3,19 +3,19 @@
     <head>
         <meta charset="utf-8">
         <title>Joga Junto</title>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,800' rel='stylesheet'>
-        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
+        <link href='css/fonts.css' rel='stylesheet'>
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/estilo.css">
         <script src="js/jquery-2.2.3.js"></script>
         <script src="js/bootstrap.js"></script>
         <script src="js/functions.js"></script>
+        <script src="js/validator.js"></script>
     </head>
     <body class="home">
-        <header class="home">
+        <header class="home" style="border-bottom: none">
             <div class="container">
                 <div class="col-laptop-8 col-tablet-7 col-phone-4">
-                    Logo
+                   &nbsp;
                 </div>
             </div>
         </header>
@@ -43,14 +43,31 @@
                                 <input class="j-form" id="sobrenome" type="text" name="sobrenome" placeholder="Sobrenome">
                             </div>
                         </div>
-                        <input class="j-form" id="email" type="email" name="email" placeholder="E-mail">
-                        <input class="j-form" id="senha" type="password" name="senha" placeholder="Senha">
-                        <button class="j-form" id="cadastrar" type="submit">Cadastrar</button>
+                        <div class="row">
+                            <div class="col-laptop-12">
+                                <input class="j-form" id="email" type="email" name="email" placeholder="E-mail">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-laptop-12">
+                                <input class="j-form" id="senha" type="password" name="senha" placeholder="Senha">
+                            </div>
+                        </div>
+                        <button class="j-form" id="cadastrar-btn" type="submit">Cadastrar</button>
                     </form>
                     <form id="entrar" class="hidden" method="post" action="dash.html">
-                        <input class="j-form" id="email" type="email" name="email" placeholder="E-mail ou usuário">
-                        <input class="j-form" id="senha" type="password" name="senha" placeholder="Senha">
-                        <button class="j-form" id="cadastrar" type="submit">Entrar</button>
+                        <div class="row">
+                            <div class="col-laptop-12">
+                                <input class="j-form" id="email" type="email" name="email" placeholder="E-mail ou usuário">
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-laptop-12">
+                                <input class="j-form" id="senha" data-minlength="6" type="password" name="senha" placeholder="Senha">
+                            </div>
+                        </div>
+                        <button class="j-form" id="entrar-btn" type="submit">Entrar</button>
                     </form>
                     <p class="separator">ou</p>
                     <button id="facebook" class="facebook j-form">Entrar com o Facebook</button>
@@ -59,6 +76,9 @@
         </section>
     </body>
     <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        });
         $('button#entrar').click(function(){
             if ($('form#entrar').hasClass('hidden')){
                 $('form#entrar').removeClass('hidden');
@@ -67,7 +87,6 @@
                 }
             }
         });
-        
         $('button#cadastrar').click(function(){
             if ($('form#cadastrar').hasClass('hidden')){
                 $('form#cadastrar').removeClass('hidden');
@@ -77,6 +96,7 @@
             }
         });
         
+        /*
         $('#nome').focusout(function() {
             if ($(this).val().length <= 2){
                 formError(this);
@@ -120,7 +140,7 @@
             if (retorno == ''){
                 tooltipNoError(this);
             }
-        });
+        });*/
         
         $("#facebook").click(function(){
             window.location = 'dash.html';

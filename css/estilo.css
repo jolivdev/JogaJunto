@@ -376,3 +376,8 @@ img.mapa{
     margin-top: 5px;
     border: 2px solid coral;
 }
+
+ol.breadcrumb{
+    background-color: transparent;
+    margin: 0px !important;
+}
