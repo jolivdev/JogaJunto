@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Joga Junto</title>
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link href='css/fonts.css' rel='stylesheet' type='text/css'>
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="js/jquery-ui/jquery-ui.css">
+    <script src="js/jquery-2.2.3.js"></script>
+    <script src="js/jquery-ui/jquery-ui.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-notify.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="col-laptop-3 col-tablet-3 col-phone-6">
+                <a data-toggle="tooltip" data-placement="bottom" title="Início" href="dash.html"><img src="img/logo-small.png" width="50px"></a>
+            </div>
+            <div class="col-laptop-6 col-tablet-6 hidden-phone">
+                <ul class="menu-top">
+                    <li><a href="busca-evento.html" data-toggle="tooltip" data-placement="bottom" title="Eventos"><i class="fa fa-lg fa-calendar-o" title="Eventos" aria-hidden="true"></i>
+</a></li>
+                    <li><a href="lista-amigos.html" data-toggle="tooltip" data-placement="bottom" title="Amigos"><i class="fa fa-lg fa-users" title="Amigos" aria-hidden="true"></i>
+</a></li>
+                    <li><a href="forum.html" data-toggle="tooltip" data-placement="bottom" title="Fórum"><i class="fa fa-lg fa-pencil-square-o" title="Fórum" aria-hidden="true"></i>
+</a></li>
+                </ul>
+            </div>
+            <div class="col-laptop-3 col-tablet-3 col-phone-6">
+                <div class="pull-right">
+                    <img class="img-circle img-profile" src="img/perfil.png" alt="Sua foto de perfil" title="Seu perfil" />
+                    <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <img src="img/ci/arrow.png" />
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="meu-perfil.html">Meu perfil</a></li>
+                        <li><a href="config.html">Configurações</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="index.html">Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <ol class="breadcrumb" style="padding-left: 0px;">
+            <li><a href="dash.html">Início</a></li>
+            <li class="active">Amigos</li>
+        </ol>
+        <div class="container">
+
+            <div class="row">
+                <ul class="nav nav-tabs" id="abas" role="tablist">
+                    <li role="presentation" class="active"><a href="#amigos" aria-controls="amigos" role="tab" data-toggle="tab">Amigos</a></li>
+                    <li role="presentation"><a href="#pedido" aria-controls="pedido" role="tab" data-toggle="tab">Solicitações de Amizade</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active row margin-top" id="amigos">
+                        <div class="col-laptop-4 col-tablet-6 col-phone-12">
+                            <div class="amigos">
+                                <img src="img/perfil.jpg" alt="ALT NAME" class="img-circle img-margin" style='width: 100px; margin-right:10px'>
+                                <h4 class="nome-amigo"><a href="perfil.html">Janaína Barros</a></h4>
+                                <small>100 amigos</small>
+                            </div>
+                        </div>
+                        <div class="col-laptop-4 col-tablet-6 col-phone-12">
+                            <div class="amigos">
+                                <img src="img/jessica.jpg" alt="ALT NAME" class="img-circle img-margin" style='width: 100px;margin-right:10px'>
+                                <h4 class="nome-amigo"><a href="perfil.html">Jéssica Teixeira</a></h4>
+                                <small>100 amigos</small>
+                            </div>
+                        </div>
+                        <div class="col-laptop-4 col-tablet-6 col-phone-12">
+                            <div class="amigos">
+                                <img src="img/evaristo.jpg" alt="ALT NAME" class="img-circle img-margin" style='width: 100px;margin-right:10px'>
+                                <h4 class="nome-amigo"><a href="perfil.html">Evaristo Costa</a></h4>
+                                <small>100 amigos</small>
+                            </div>
+                        </div>
+                        <div class="col-laptop-4 col-tablet-6 col-phone-12">
+                            <div class="amigos">
+                                <img src="img/ellen.png" alt="ALT NAME" class="img-circle img-margin" style='width: 100px;margin-right:10px'>
+                                <h4 class="nome-amigo"><a href="perfil.html">Ellen Página</a></h4>
+                                <small>100 amigos</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane margin-top row" id="pedido">
+                        <div class="col-laptop-4 col-tablet-12 col-phone-12" id="amigo-1">
+                            <div class="amigos">
+                                <img src="img/patrick.jpg" alt="ALT NAME" class="img-circle img-margin" style='width: 100px;margin-right:10px'>
+                                <h4 class="nome-amigo"><a href="perfil.html">Jared Jorge</a></h4>
+                                <div class="amigos-botoes text-center">
+                                    <a class="j-form-xs aceitar" id="1"><i class="fa fa-user-plus" aria-hidden="true"></i> Aceitar</a>
+                                    <a class="j-form-xs recusar" id="1"><i class="fa fa-user-times" aria-hidden="true"></i> Recusar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-laptop-4 col-tablet-12 col-phone-12" id="amigo-2">
+                            <div class="amigos">
+                                <img src="img/evertt.jpg" alt="ALT NAME" class="img-circle img-margin" style='width: 100px;margin-right:10px'>
+                                <h4 class="nome-amigo"><a href="perfil.html">Evertt Arima</a></h4>
+                                <div class="amigos-botoes text-center">
+                                    <a class="j-form-xs aceitar" id="2"><i class="fa fa-user-plus" aria-hidden="true"></i> Aceitar</a>
+                                    <a class="j-form-xs recusar" id="2"><i class="fa fa-user-times" aria-hidden="true"></i> Recusar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-laptop-4 col-tablet-12 col-phone-12" id="amigo-3">
+                            <div class="amigos">
+                                <img src="img/douglas.jpg" alt="ALT NAME" class="img-circle img-margin" style='width: 100px;margin-right:10px'>
+                                <h4 class="nome-amigo"><a href="perfil.html">Douglas Santos</a></h4>
+                                <div class="amigos-botoes text-center">
+                                    <a class="j-form-xs aceitar" id="3"><i class="fa fa-user-plus" aria-hidden="true"></i> Aceitar</a>
+                                    <a class="j-form-xs recusar" id="3"><i class="fa fa-user-times" aria-hidden="true"></i> Recusar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
+    $('#abas a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    });
+    $("#pedido div.amigos a.j-form-xs").click(function(){
+        var id = $(this).attr('id');
+        $("#amigo-" + id).addClass('hidden');
+    });
+    
+    $(".recusar").click(function(){
+        $.notify({
+            message: 'Você recusou a solicitação de amizade!'
+        }, {
+            type: 'warning'
+        });
+    });
+    $(".aceitar").click(function(){
+        $.notify({
+            message: 'Você aceitou a solicitação de amizade!'
+        }, {
+            type: 'success'
+        });
+    });
+</script>
+
+</html>

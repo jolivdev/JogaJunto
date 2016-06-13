@@ -93,7 +93,9 @@ textarea.j-form{
 }
 
 button.j-form, a.j-form{
+    cursor: pointer;
     font-weight: 600;
+    text-align: center;
     padding: 8px 12px;
     line-height: 1.467;
     box-shadow: none;
@@ -117,7 +119,7 @@ button.j-form:hover, a.j-form:hover{
 
 .j-form-xs{
     font-weight: 600;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     padding: 5px 5px;
     line-height: 1.467;
     box-shadow: none;
@@ -128,8 +130,9 @@ button.j-form:hover, a.j-form:hover{
 }
 
 .j-form-xs:hover{
+    cursor: pointer;
     font-weight: 600;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     padding: 5px 5px;
     line-height: 1.467;
     box-shadow: none;
@@ -380,4 +383,90 @@ img.mapa{
 ol.breadcrumb{
     background-color: transparent;
     margin: 0px !important;
+}
+
+/*header .fa{
+    font-size: 18px;
+}*/
+
+.amigos{
+    border: 2px solid coral;
+    margin-bottom: 15px;
+    height: auto;
+}
+
+.nome-amigo{
+    display: inline;
+}
+
+.img-margin{
+    margin: 5px;
+}
+
+.comment{
+    padding: 4px 12px !important;
+}
+
+.dropdown-menu{
+    border-radius: none; 
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 2px solid coral;
+    border-radius: 0;
+}
+
+.dropdown-menu .divider{
+    background-color: coral;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid coral;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    background-color: #fff;
+    border: 1px solid coral;
+    border-bottom-color: transparent;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #fff;
+}
+
+.nav-tabs > li > a:hover {
+    border-color: coral;
+}
+
+.amigos-botoes, .amigos-botoes div{
+}
+
+.hidden{
+    visibility: 0;
+}
+
+#pedido div{
+    -webkit-transition: visibility 0.8s;
+    -moz-transition: visibility 0.8s;
+    transition: visibility 0.8s;
+}
+
+div.alert{
+    border-radius: 0px;
+    background: #fff;
+}
+
+div.alert.alert-warning{
+    border-color: coral;
+    color: coral;
+}
+
+div.alert.alert-success{
+    border-color: #70B33F;
+    color: #70B33F;
+}
+
+div.bootstrap-select button{
+    margin-top: 5px;
+    border-radius: 0px;
 }

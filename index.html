@@ -6,6 +6,7 @@
         <link href='css/fonts.css' rel='stylesheet'>
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/estilo.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
         <script src="js/jquery-2.2.3.js"></script>
         <script src="js/bootstrap.js"></script>
         <script src="js/functions.js"></script>
@@ -69,8 +70,10 @@
                         </div>
                         <button class="j-form" id="entrar-btn" type="submit">Entrar</button>
                     </form>
-                    <p class="separator">ou</p>
-                    <button id="facebook" class="facebook j-form">Entrar com o Facebook</button>
+                    <div class="col-laptop-6 pull-right" id="facebook-container">
+                        <p class="separator">ou</p>
+                        <button id="facebook" class="facebook j-form">Entrar com o Facebook <i class="fa fa-lg fa-facebook-official" aria-hidden="true"></i></button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -85,6 +88,9 @@
                 if (!($('form#cadastrar').hasClass('hidden'))){
                     $('form#cadastrar').addClass('hidden');
                 }
+                if (!($('#facebook-container').hasClass('hidden'))){
+                    $('#facebook-container').addClass('hidden');
+                }
             }
         });
         $('button#cadastrar').click(function(){
@@ -92,6 +98,9 @@
                 $('form#cadastrar').removeClass('hidden');
                 if (!($('form#entrar').hasClass('hidden'))){
                     $('form#entrar').addClass('hidden');
+                }
+                if (!($('#facebook-container').hasClass('hidden'))){
+                    $('#facebook-container').addClass('hidden');
                 }
             }
         });

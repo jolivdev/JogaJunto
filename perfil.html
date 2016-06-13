@@ -51,16 +51,17 @@
         <div class="container margin-top">
             <div class="row profile">
                 <div class="col-laptop-2">
-                    <img src="img/perfil.png" class="img-circle img-responsive">
+                    <img src="img/perfil.jpg" class="img-circle img-responsive">
                 </div>
                 <div class="col-laptop-8">
-                    <h1>Lara Schwimzk</h1>
+                    <h1>Janaína Barros</h1>
                     <p>Praia Grande, São Paulo <i class="fa fa-map-marker text-jj" aria-hidden="true"></i></p>
-                    <p>Interesses: Futebol e Yoga</p>
-                    <p><i class="fa fa-quote-left text-jj"></i>&nbsp;O amor não é aquilo que você passa a vida inteira tentando definir. O nome disso é abdômen. Amor é outra coisa!&nbsp;<i class="em em-muscle"></i>&nbsp;<i class="fa fa-quote-right text-jj"></i></p>
+                    <p>Interesses: Futebol</p>
+                    <p><i class="fa fa-quote-left text-jj"></i>&nbsp;Foco, força e fé! &nbsp;<i class="em em-muscle"></i>&nbsp;<i class="fa fa-quote-right text-jj"></i></p>
                 </div>
                 <div class="col-laptop-2 margin-top">
-                    <a class="j-form pull-right" href="config.html"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+                    <a class="j-form pull-right" id="remover"><i class="fa fa-user-times" aria-hidden="true"></i> Remover dos amigos</a>
+                    <a class="j-form pull-right hidden" id="adicionar"><i class="fa fa-user-plus" aria-hidden="true"></i> Adicionar aos amigos</a>
                 </div>
             </div>
             <div class="row">
@@ -87,8 +88,8 @@
                             <span class="number">4</span> <span class="month">jun/2016</span>
                         </div>
                         <div class="col-laptop-7 col-tablet-6 col-phone-6">
-                            <h4>Comentou no post "Yoga faz bem pro coração?"</h4>
-                            <p>Lara: Sim, yoga relaxa o corpo todo e é uma delícia! <i class="em em-cherry_blossom"></i></p>
+                            <h4>Criou o post "Qual é a melhor bola?"</h4>
+                            <p>Janaína: Oi galera, hoje tava procurando uma bola pra comprar mas não consegui decidir qual...</p>
                         </div>
                     </div>
                 </div>
@@ -99,7 +100,17 @@
 <script>
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
-    })
+    });
+    
+    $("#adicionar").click(function(){
+        $("#adicionar").toggleClass("hidden");
+        $("#remover").toggleClass("hidden");
+    });
+    
+    $("#remover").click(function(){
+        $("#remover").toggleClass("hidden");
+        $("#adicionar").toggleClass("hidden");
+    });
 </script>
 
 </html>

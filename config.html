@@ -9,48 +9,22 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="js/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="css/bootstrap-select.css">
     <script src="js/jquery-2.2.3.js"></script>
     <script src="js/jquery-ui/jquery-ui.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="js/bootstrap-notify.js"></script>
-    <script src="js/validator.js"></script>
+    <script src="js/bootstrap-select.js"></script>
     <script>
         $(function () {
             var esportes = [
-              "Basquete",
-                "Boxe",
-                "Ciclismo",
+                "Basquete",
                 "Futebol",
-                "Jiu Jitsu",
-                "Judô",
-                "Parkour",
-                "Surf",
-                "Tênis",
                 "Vôlei",
-                "Windsurf",
-                "Xadrez"
+                "Windsurf"
             ];
             $("#esportes").autocomplete({
                 source: function (request, response) {
                     var results = $.ui.autocomplete.filter(esportes, request.term);
-
-                    response(results.slice(0, 10));
-                }
-            });
-        });
-    </script>
-    <script>
-        $(function () {
-            var locais = [
-                "Praia Grande, SP",
-                "São Paulo, SP",
-                "Unicórnios, SP",
-                "Santos, SP",
-                "Rio de Janeiro, RJ"
-            ];
-            $("#place").autocomplete({
-                source: function (request, response) {
-                    var results = $.ui.autocomplete.filter(locais, request.term);
 
                     response(results.slice(0, 10));
                 }
@@ -93,49 +67,50 @@
     </header>
     <section class="dash">
         <div class="container">
-            <ol class="breadcrumb">
+            <ol class="breadcrumb" style="padding-left: 0px;">
                 <li><a href="dash.html">Início</a></li>
-                <li class="active">Eventos</li>
+                <li class="Configurações">Criar</li>
             </ol>
-            <div class="row">
-                <div class="col-laptop-6 col-laptop-push-3">
-                    <form method="post">
-                        <div class="row">
-                            <div class="col-laptop-6">
-                                <input type="text" class="j-form" placeholder="Quero" value="Futebol" name="esporte" id="esportes">
-                            </div>
-                            <div class="col-laptop-6">
-                                <input type="text" class="j-form" placeholder="em" value="Praia Grande, SP" name="local" id="place">
-                            </div>
+            <div class="col-laptop-6 col-laptop-push-3">
+                <h1 class="text-center text-jj">CONFIGURAÇÕES</h1>
+                <form class="margin-top" method="post" action="meu-perfil.html">
+                    <div class="row">
+                        <div class="col-laptop-3">
+                            <span class="form">Citação</span>
                         </div>
-                        <button type="submit" class="j-form">Buscar</button>
-                    </form>
-                </div>
-                <div class="col-laptop-3 col-laptop-push-3 col-tablet-4 col-phone-12 side-new">
-                    <h4>Não encontrou o que você queria?</h4>
-                    <form action="criar-evento.html" method="post">
-                        <button type="submit" class="j-form">Crie seu evento!</button>
-                    </form>
-                </div>
-            </div>
+                        <div class="col-laptop-9">
+                            <textarea class="j-form" placeholder="Quem é você ou uma frase que te descreva" name="titulo" style="min-height: 90px;">O amor não é aquilo que você passa a vida inteira tentando definir. O nome disso é abdômen. Amor é outra coisa!</textarea>
+                        </div>
+                        <div class="col-laptop-3">
+                            <span class="form">Cidade</span>
+                        </div>
+                        <div class="col-laptop-9">
+                            <input type="text" class="j-form" placeholder="local" name="local" value="Praia Grande, SP">
+                        </div>
+                        <div class="col-laptop-12">
+                            <img src="img/mapa.png" class="img-responsive mapa">
+                        </div>
+                        <div class="col-laptop-3">
+                            <span class="form">Modalidades</span>
+                        </div>
+                        <div class="col-laptop-9">
+                            <select class="selectpicker" data-width="100%" multiple>
+                                <optgroup label="Atividades">
+                                    <option>Basquete</option>
+                                    <option>Futebol</option>
+                                    <option>Yoga</option>
+                                </optgroup>
+                                <optgroup label="Artes Marciais">
+                                    <option>Boxe</option>
+                                    <option>Jiu Jitsu</option>
+                                    <option>Judô</option>
+                                </optgroup>
+                            </select>
 
-            <div class="row">
-                <div class="col-laptop-6 col-laptop-push-3 col-tablet-8 col-phone-12">
-                    <div class="evento">
-                        <div class="col-laptop-3 col-tablet-3 col-phone-3 date">
-                            <span class="number">12</span> <span class="month">jun/2016</span>
-                        </div>
-                        <div class="col-laptop-6 col-tablet-6 col-phone-6">
-                            <h4>Futebol na praça</h4>
-                            <p>R. Suriname, nº55 Boqueirão, Praia Grande</p>
-                            <span>Domingo, 14h</span>
-                            <button class="j-form-xs pull-right" id="participar">Jogar junto</button>
-                        </div>
-                        <div class="col-laptop-3 col-tablet-3 col-phone-3 mapa">
-                            <span></span>
                         </div>
                     </div>
-                </div>
+                    <button type="submit" class="j-form">Salvar</button>
+                </form>
             </div>
 
         </div>
@@ -144,14 +119,8 @@
 <script>
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
-    })
-    $("#participar").click(function () {
-        $.notify({
-            message: 'Você agora está participando do evento!    '
-        }, {
-            type: 'success'
-        });
-    })
+    });
+    $('.selectpicker').selectpicker('selectAll');
 </script>
 
 </html>
